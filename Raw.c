@@ -20,8 +20,12 @@ struct my_packet {
 int main()
 {
   int sockfd, one = 1;
-  unsigned short local_port = htons(3000), syn_port = htons(2000);
-  unsigned long syn_daddr = inet_addr("127.0.0.1"), syn_saddr = inet_addr("127.0.0.1");
+  //unsigned short local_port = htons(3000), syn_port = htons(2000);
+  // First port is the client's and the second is the port to send to for the server
+  unsigned short local_port = htons(3000), syn_port = htons(5000);
+  //unsigned long syn_daddr = inet_addr("127.0.0.1"), syn_saddr = inet_addr("127.0.0.1");
+  // First address is the server address, second is the spoofed client IP
+  unsigned long syn_daddr = inet_addr("127.0.0.1"), syn_saddr = inet_addr("127.0.0.2");
   unsigned char in[65000];
   socklen_t size;
   struct my_packet out;
