@@ -11,8 +11,9 @@
 #define PORT 12345
 #define MAX_BUFFER_SIZE 1024
 
-#define SPOOFED_IP "192.168.1.100"
-#define SPOOFED_PORT 56789
+//#define SPOOFED_IP "192.168.1.100"
+#define SPOOFED_IP "192.168.86.23"
+#define SPOOFED_PORT 15555
 
 int main() {
     int sockfd;
